@@ -1,0 +1,466 @@
+/* Base Styles */
+.pageContainer {
+  min-height: 100vh;
+  background-color: #0D1117;
+  color: #C9D1D9;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.highlight {
+  color: #58A6FF;
+}
+
+/* Hero Section */
+.heroSection {
+  padding: 6rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image: radial-gradient(circle at 25% 25%, #58A6FF 0%, transparent 50%);
+}
+
+.heroContent {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 3.75rem;
+  }
+}
+
+.heroDescription {
+  font-size: 1.25rem;
+  color: #8B949E;
+  max-width: 48rem;
+  margin: 0 auto;
+  line-height: 1.625;
+}
+
+/* About Grid */
+.aboutGrid {
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .aboutGrid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+
+/* About Text */
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.prose {
+  color: #C9D1D9;
+}
+
+.paragraph {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: #161B22;
+  border-radius: 0.5rem;
+  border: 1px solid #30363D;
+  transition: border-color 0.3s ease;
+}
+
+.statCard:hover {
+  border-color: #58A6FF;
+}
+
+.statIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #58A6FF;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: #8B949E;
+}
+
+.statValue {
+  color: white;
+  font-weight: 500;
+}
+
+/* Quick Stats Card */
+.quickStatsCard {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background-color: #161B22;
+  border: 1px solid #30363D;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.card:hover {
+  border-color: #58A6FF;
+}
+
+.cardTitle {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.cardTitleIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #58A6FF;
+  margin-right: 0.5rem;
+}
+
+.cardContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statName {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #C9D1D9;
+}
+
+.statIconSmall {
+  width: 1rem;
+  height: 1rem;
+  color: #58A6FF;
+}
+
+.statNumber {
+  color: #58A6FF;
+  font-weight: 600;
+}
+
+/* Experience Section */
+.experienceSection {
+  padding: 5rem 0;
+  background-color: rgba(22, 27, 34, 0.3);
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionTitleIcon {
+  width: 2rem;
+  height: 2rem;
+  color: #58A6FF;
+  margin-right: 0.75rem;
+}
+
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.experienceCard {
+  background-color: #161B22;
+  border: 1px solid #30363D;
+  transition: all 0.3s ease;
+}
+
+.experienceCard:hover {
+  border-color: #58A6FF;
+  transform: scale(1.02);
+}
+
+.experienceContent {
+  padding: 2rem;
+}
+
+.experienceHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .experienceHeader {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.experienceTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.experienceCompany {
+  color: #58A6FF;
+  font-weight: 500;
+}
+
+.experiencePeriod {
+  background-color: #0D1117;
+  color: #58A6FF;
+  border: 1px solid #30363D;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.experienceDescription {
+  color: #8B949E;
+  line-height: 1.625;
+  margin-bottom: 1rem;
+}
+
+.achievements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.achievementBadge {
+  color: #C9D1D9;
+  border: 1px solid #30363D;
+  font-weight: 400;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+/* Education Section */
+.educationSection {
+  padding: 5rem 0;
+}
+
+.educationGrid {
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .educationGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.educationColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.educationList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.educationCard {
+  background-color: #161B22;
+  border: 1px solid #30363D;
+  transition: border-color 0.3s ease;
+}
+
+.educationCard:hover {
+  border-color: #58A6FF;
+}
+
+.educationContent {
+  padding: 1.5rem;
+}
+
+.educationHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .educationHeader {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.educationDegree {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+}
+
+.educationPeriod {
+  background-color: #0D1117;
+  color: #58A6FF;
+  border: 1px solid #30363D;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.educationSchool {
+  color: #58A6FF;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.educationDescription {
+  color: #8B949E;
+  line-height: 1.625;
+}
+
+/* Certifications Section */
+.certificationsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.certificationsList {
+  display: grid;
+  gap: 1rem;
+}
+
+.certificationCard {
+  background-color: #161B22;
+  border: 1px solid #30363D;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.certificationCard:hover {
+  border-color: #58A6FF;
+  transform: scale(1.05);
+}
+
+.certificationContent {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.certificationName {
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.certificationCard:hover .certificationName {
+  color: #58A6FF;
+}
+
+.certificationIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #8B949E;
+  transition: color 0.3s ease;
+}
+
+.certificationCard:hover .certificationIcon {
+  color: #58A6FF;
+}
+
+/* Resume Button */
+.resumeButtonContainer {
+  margin-top: 2rem;
+}
+
+.resumeButton {
+  width: 100%;
+  background-color: #58A6FF;
+  color: white;
+  transition: all 0.3s ease;
+  height: 5rem;
+  border-radius: 10px;
+}
+
+.resumeButton:hover {
+  background-color: #4A95E5;
+  transform: scale(1.05);
+}
+
+.buttonIcon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animateFadeInUp {
+  animation: fade-in-up 0.6s ease-out forwards;
+}

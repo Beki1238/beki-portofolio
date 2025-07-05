@@ -1,0 +1,95 @@
+/* Base Badge Styles */
+.baseBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  width: fit-content;
+  white-space: nowrap;
+  flex-shrink: 0;
+  gap: 0.25rem;
+  transition-property: color, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  overflow: hidden;
+}
+
+.baseBadge [data-slot="icon"] {
+  width: 0.75rem;
+  height: 0.75rem;
+  pointer-events: none;
+}
+
+.baseBadge:focus-visible {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 50%, transparent);
+}
+
+.baseBadge[aria-invalid="true"] {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--destructive) 20%, transparent);
+}
+
+.dark .baseBadge[aria-invalid="true"] {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--destructive) 40%, transparent);
+}
+
+/* Variants */
+.defaultVariant {
+  border-color: transparent;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.defaultVariant:hover {
+  background-color: color-mix(in srgb, var(--primary) 90%, transparent);
+}
+
+.secondaryVariant {
+  border-color: transparent;
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.secondaryVariant:hover {
+  background-color: color-mix(in srgb, var(--secondary) 90%, transparent);
+}
+
+.destructiveVariant {
+  border-color: transparent;
+  background-color: var(--destructive);
+  color: white;
+}
+
+.destructiveVariant:hover {
+  background-color: color-mix(in srgb, var(--destructive) 90%, transparent);
+}
+
+.destructiveVariant:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--destructive) 20%, transparent);
+}
+
+.dark .destructiveVariant {
+  background-color: color-mix(in srgb, var(--destructive) 60%, transparent);
+}
+
+.dark .destructiveVariant:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--destructive) 40%, transparent);
+}
+
+.outlineVariant {
+  color: var(--foreground);
+}
+
+.outlineVariant:hover {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+/* Link-specific styles */
+.baseBadge[href]:hover {
+  cursor: pointer;
+}

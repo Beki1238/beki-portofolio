@@ -1,0 +1,550 @@
+/* Base Styles */
+.pageContainer {
+  min-height: 100vh;
+  background-color: #0D1117;
+  color: #C9D1D9;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.highlight {
+  color: #58A6FF;
+}
+
+/* Hero Section */
+.heroSection {
+  padding: 6rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image: radial-gradient(circle at 50% 25%, #8957E5 0%, transparent 50%);
+}
+
+.heroContent {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 3.75rem;
+  }
+}
+
+.heroDescription {
+  font-size: 1.25rem;
+  color: #8B949E;
+  max-width: 48rem;
+  margin: 0 auto;
+  line-height: 1.625;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .controls {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.searchContainer {
+  position: relative;
+  flex: 1;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8B949E;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.searchInput {
+  padding-left: 2.5rem;
+  background-color: #161B22;
+  border-color: #30363D;
+  color: white;
+  width: 90%;
+}
+
+.searchInput:focus {
+  border-color: #58A6FF;
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.25);
+}
+
+.filterButtons {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.filterButton {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.filterButton:not(.filterButtonActive) {
+  background-color: #161B22;
+  color: #C9D1D9;
+  border: 1px solid #30363D;
+}
+
+.filterButton:hover:not(.filterButtonActive) {
+  background-color: #21262D;
+  transform: scale(1.05);
+}
+
+.filterButtonActive {
+  background-color: #58A6FF;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(88, 166, 255, 0.1), 0 2px 4px -1px rgba(88, 166, 255, 0.06);
+}
+
+/* Featured Section */
+.featuredSection {
+  padding: 5rem 0;
+  background-color: rgba(22, 27, 34, 0.3);
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.featuredGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .featuredGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.featuredCard {
+  background-color: #161B22;
+  border: 1px solid #30363D;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.featuredCard:hover {
+  border-color: #58A6FF;
+  transform: scale(1.02);
+}
+
+.cardImageContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.featuredCard:hover .cardImage {
+  transform: scale(1.1);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.featuredCard:hover .cardOverlay {
+  opacity: 1;
+}
+
+.statusBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+}
+
+.activeBadge {
+  background-color: #2EA043;
+  color: white;
+  border: 1px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.completedBadge {
+  background-color: #8957E5;
+  color: white;
+  border: none;
+    border-radius: 5px;
+  padding: 5px;
+
+}
+
+.cardHeader {
+  padding: 1.5rem;
+}
+
+.cardTitleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.featuredCard:hover .cardTitle {
+  color: #58A6FF;
+}
+
+.cardDescription {
+  color: #8B949E;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+  color: #8B949E;
+  font-size: 0.875rem;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.statIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.cardContent {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.techBadge {
+  background-color: #0D1117;
+  color: #58A6FF;
+  border: 1px solid #30363D;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 0.75rem;
+}
+
+.moreTechBadge {
+  background-color: #0D1117;
+  color: #8B949E;
+  border: 1px solid #30363D;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 0.75rem;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dateInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: #8B949E;
+}
+
+.dateIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.codeButton {
+  background-color: transparent;
+  color: #C9D1D9;
+  border: 1px solid #30363D;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.demoButton {
+  background-color: #58A6FF;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.buttonIcon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+/* Projects Section */
+.projectsSection {
+  padding: 5rem 0;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.projectCount {
+  color: #8B949E;
+}
+
+.projectsGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projectsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.projectCard {
+  background-color: #161B22;
+  border: 1px solid #30363D;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.projectCard:hover {
+  border-color: #58A6FF;
+  transform: scale(1.05);
+}
+
+.cardHoverOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.projectCard:hover .cardHoverOverlay {
+  opacity: 1;
+}
+
+.hoverActionButton {
+  padding: 0.75rem;
+  background-color: rgba(22, 27, 34, 0.9);
+  border-radius: 9999px;
+  color: white;
+  transition: background-color 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.hoverActionButton:hover {
+  background-color: #58A6FF;
+}
+
+.actionIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.featuredIcon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #FBBF24;
+  fill: currentColor;
+}
+
+.projectStats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+}
+
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.emptyStateIcon {
+  width: 4rem;
+  height: 4rem;
+  color: #8B949E;
+  margin: 0 auto 1rem;
+}
+
+.emptyStateTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.emptyStateText {
+  color: #8B949E;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 5rem 0;
+  background-color: rgba(22, 27, 34, 0.3);
+}
+
+.ctaContent {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.ctaText {
+  font-size: 1.25rem;
+  color: #8B949E;
+  margin-bottom: 2rem;
+}
+
+.ctaButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .ctaButtons {
+    flex-direction: row;
+  }
+}
+
+.primaryCtaButton {
+  background-color: #58A6FF;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.primaryCtaButton:hover {
+  background-color: #4A95E5;
+  transform: scale(1.05);
+}
+
+.secondaryCtaButton {
+  background-color: transparent;
+  color: #C9D1D9;
+  border: 1px solid #30363D;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.secondaryCtaButton:hover {
+  background-color: #161B22;
+  transform: scale(1.05);
+}
+
+.ctaButtonIcon {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.primaryCtaButton:hover .ctaButtonIcon {
+  transform: translate(0.25rem, -0.25rem);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animateFadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
