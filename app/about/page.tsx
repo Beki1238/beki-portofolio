@@ -76,9 +76,9 @@ export default function About() {
   ]
 
   const certifications = [
-    "AWS Certified Developer",
-    "Google Cloud Professional",
-    "React Developer Certification",
+    "AIT Certified Developer",
+    "Dire Dawa SoftWare Professional",
+    "DDU ICT Club Certification",
     "Node.js Certified Developer",
   ]
 
