@@ -89,6 +89,14 @@ export default function Skills() {
       color: "from-green-500 to-green-700",
       experience: "3+ years",
     },
+       {
+      name: "MySQL",
+      level: 82,
+      category: "database",
+      icon: <Database className="w-6 h-6" />,
+      color: "from-green-500 to-green-700",
+      experience: "3+ years",
+    },
     {
       name: "PostgreSQL",
       level: 80,
@@ -99,6 +107,14 @@ export default function Skills() {
     },
     {
       name: "React Native",
+      level: 75,
+      category: "mobile",
+      icon: <Smartphone className="w-6 h-6" />,
+      color: "from-purple-400 to-purple-600",
+      experience: "2+ years",
+    },
+        {
+      name: "Flutter",
       level: 75,
       category: "mobile",
       icon: <Smartphone className="w-6 h-6" />,
