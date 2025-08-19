@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import styles from './Home.module.css' // Import the CSS module
+import styles from './Home.module.css'
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0)
@@ -32,6 +32,30 @@ export default function Home() {
     { icon: <Star className={styles.iconMedium} />, value: "30+", label: "GitHub Stars" },
     { icon: <Users className={styles.iconMedium} />, value: "100+", label: "Happy Clients" },
     { icon: <Coffee className={styles.iconMedium} />, value: "∞", label: "Cups of Coffee" },
+  ]
+
+  const quickLinks = [
+    {
+      title: "About Me",
+      description: "Learn about my background, experience, and what drives me as a developer.",
+      href: "/about",
+      icon: <Users className={styles.iconLarge} />,
+      color: styles.gradientBlue,
+    },
+    {
+      title: "Skills & Tech",
+      description: "Explore the technologies and tools I use to bring ideas to life.",
+      href: "/skills",
+      icon: <Code className={styles.iconLarge} />,
+      color: styles.gradientGreen,
+    },
+    {
+      title: "Projects",
+      description: "Check out my latest work and the solutions I've built for various challenges.",
+      href: "/projects",
+      icon: <Rocket className={styles.iconLarge} />,
+      color: styles.gradientPurple,
+    },
   ]
 
   return (
@@ -75,18 +99,17 @@ export default function Home() {
                 </h2>
 
                 <p className={`${styles.heroDescription} ${styles.animateFadeInUp} ${styles.delay800}`}>
-                  I craft exceptional digital experiences through clean code, innovative solutions, and user-centered
-                  design. Let's build something amazing together.
+                  I craft exceptional digital experiences through clean code, innovative solutions, and user-centered design. Let's build something amazing together.
                 </p>
               </div>
 
               <div className={`${styles.heroActions} ${styles.animateFadeInUp} ${styles.delay1000}`}>
-                <Link href="/projects">
-                  <Button className={styles.primaryButton}>
+                <Button asChild className={styles.primaryButton}>
+                  <Link href="/projects">
                     View My Work
                     <ArrowRight className={`${styles.iconSmall} ${styles.buttonIcon}`} />
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
                 <Button variant="outline" className={styles.outlineButton}>
                   <Download className={`${styles.iconSmall} ${styles.buttonIcon}`} />
                   Download CV
@@ -94,13 +117,13 @@ export default function Home() {
               </div>
 
               <div className={`${styles.socialIcons} ${styles.animateFadeInUp} ${styles.delay1200}`}>
-                <a href="https://github.com/beki1238" className={styles.socialIcon}>
+                <a href="https://github.com/beki1238" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                   <Github className={styles.iconMedium} />
                 </a>
-                <a href="https://www.linkedin.com/in/bereket-bahiru-73bb08297/" className={styles.socialIcon}>
+                <a href="https://www.linkedin.com/in/bereket-bahiru-73bb08297/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                   <Linkedin className={styles.iconMedium} />
                 </a>
-                <a href="bahibeki@gmail.com" className={styles.socialIcon}>
+                <a href="mailto:bahibeki@gmail.com" className={styles.socialIcon}>
                   <Mail className={styles.iconMedium} />
                 </a>
               </div>
@@ -167,46 +190,26 @@ export default function Home() {
             </p>
           </div>
 
-          <div className={styles.quickLinksGrid}>
-            {[
-              {
-                title: "About Me",
-                description: "Learn about my background, experience, and what drives me as a developer.",
-                href: "/about",
-                icon: <Users className={styles.iconLarge} />,
-                color: styles.gradientBlue,
-              },
-              {
-                title: "Skills & Tech",
-                description: "Explore the technologies and tools I use to bring ideas to life.",
-                href: "/skills",
-                icon: <Code className={styles.iconLarge} />,
-                color: styles.gradientGreen,
-              },
-              {
-                title: "Projects",
-                description: "Check out my latest work and the solutions I've built for various challenges.",
-                href: "/projects",
-                icon: <Rocket className={styles.iconLarge} />,
-                color: styles.gradientPurple,
-              },
-            ].map((item, index) => (
-              <Link key={index} href={item.href}>
-                <Card className={styles.quickLinkCard}>
-                  <CardContent className={styles.quickLinkContent}>
-                    <div className={`${styles.quickLinkIcon} ${item.color}`}>
-                      {item.icon}
-                    </div>
-                    <h3 className={styles.quickLinkTitle}>{item.title}</h3>
-                    <p className={styles.quickLinkDescription}>{item.description}</p>
-                    <div className={styles.quickLinkCta}>
-                      <span>Learn more</span>
-                      <ArrowRight className={styles.iconSmall} />
-                    </div>
-                  </CardContent>
+          <div className={styles.quickLinksContainer}>
+            <div className={styles.quickLinksGrid}>
+              {quickLinks.map((item, index) => (
+                <Card key={index} className={styles.quickLinkCard}>
+                  <Link href={item.href} className={styles.quickLinkWrapper}>
+                    <CardContent className={styles.quickLinkContent}>
+                      <div className={`${styles.quickLinkIcon} ${item.color}`}>
+                        {item.icon}
+                      </div>
+                      <h3 className={styles.quickLinkTitle}>{item.title}</h3>
+                      <p className={styles.quickLinkDescription}>{item.description}</p>
+                      <div className={styles.quickLinkCta}>
+                        <span>Learn more</span>
+                        <ArrowRight className={styles.iconSmall} />
+                      </div>
+                    </CardContent>
+                  </Link>
                 </Card>
-              </Link>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
